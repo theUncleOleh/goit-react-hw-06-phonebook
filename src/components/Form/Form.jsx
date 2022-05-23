@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import s from './Form.module.css';
 
-
 export default function Form({ onSubmit }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -29,6 +28,14 @@ export default function Form({ onSubmit }) {
     setName('');
     setNumber('');
   };
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   const form = e.currentTarget;
+  //   console.log(form.elements.name.value);
+  //   // console.log(form.elements.number.value);
+  //   dispatch(addItem(form.elements.name.value));
+  //   form.reset();
+  // };
   return (
     <form onSubmit={handleSubmit} className={s.form}>
       <label htmlFor="" className={s.label}>
