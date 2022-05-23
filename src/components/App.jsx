@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 // import FormByFormik from './Formik';
 import Form from './Form/Form';
@@ -114,5 +113,3 @@ export default function App() {
     </div>
   );
 }
-
-

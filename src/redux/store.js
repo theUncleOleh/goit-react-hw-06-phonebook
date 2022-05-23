@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { addItem, reducer } from './contacts/itemSlice';
+import { addItem } from './contacts/itemSlice';
 
-import logger from 'redux-logger';
+
 // export const increment = createAction('items/increment');
 // export const decrement = createAction('items/decrement');
 
