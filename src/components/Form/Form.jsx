@@ -28,14 +28,7 @@ export default function Form({ onSubmit }) {
     setName('');
     setNumber('');
   };
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   const form = e.currentTarget;
-  //   console.log(form.elements.name.value);
-  //   // console.log(form.elements.number.value);
-  //   dispatch(addItem(form.elements.name.value));
-  //   form.reset();
-  // };
+
   return (
     <form onSubmit={handleSubmit} className={s.form}>
       <label htmlFor="" className={s.label}>
