@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { addItem } from './contacts/itemSlice';
-
+import { reducers } from './contacts/itemSlice';
+import logger from 'redux-logger';
 
 // export const increment = createAction('items/increment');
 // export const decrement = createAction('items/decrement');
@@ -11,6 +11,7 @@ import { addItem } from './contacts/itemSlice';
 // });
 export const store = configureStore({
   reducer: {
-    contacts: addItem,
+    contacts: reducers,
   },
+  middleware: getDefaultMiddleware => [...getDefaultMiddleware(), logger],
 });

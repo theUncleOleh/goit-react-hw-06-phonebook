@@ -8,15 +8,15 @@ export default function ContactList({ contacts, onDeleteContact }) {
     <Fragment>
       <h2 className={s.title}>Contacts</h2>
       <ul className={s.list}>
-        {contacts.map(({ id, name, number }) => (
-          <li key={id} className={s.item}>
+        {contacts.map(contact => (
+          <li key={contact.id} className={s.item}>
             <p className={s.graf}>
-              {name}: {number}
+              {contact.name}: {contact.number}
             </p>
             <button
               type="button"
               className={s.button}
-              onClick={() => onDeleteContact(id)}
+              onClick={() => onDeleteContact(contact.id)}
             >
               Delete
             </button>
