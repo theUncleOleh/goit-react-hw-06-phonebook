@@ -1,5 +1,5 @@
 import { combineReducers, createReducer } from '@reduxjs/toolkit';
-import { addItem, deleteItem, filterItem } from './items-actions';
+import { add, remove, filter } from './items-actions';
 
 export const myReducer = createReducer(
   [
@@ -9,17 +9,17 @@ export const myReducer = createReducer(
     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
   ],
   {
-    [addItem]: (state, action) => [...state, action.payload],
-    [deleteItem]: (state, action) =>
+    [add]: (state, action) => [...state, action.payload],
+    [remove]: (state, action) =>
       state.filter(({ id }) => id !== action.payload),
   }
 );
 
 export const filterReducer = createReducer('', {
-  [filterItem]: (_, action) => action.payload,
+  [filter]: (_, action) => action.payload,
 });
 
 export const reducers = combineReducers({
-  item: myReducer,
+  items: myReducer,
   filter: filterReducer,
 });

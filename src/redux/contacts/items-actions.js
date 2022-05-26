@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
 
-export const addItem = createAction('item/add');
-export const deleteItem = createAction('item/delete');
-export const filterItem = createAction('item/filter');
+export const add = createAction('item/add');
+export const remove = createAction('item/delete');
+export const filter = createAction('item/filter');

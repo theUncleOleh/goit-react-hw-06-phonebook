@@ -4,7 +4,8 @@ import { Fragment } from 'react';
 import { ToastContainer } from 'react-toastify';
 import s from './ContactList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem, deleteItem } from '../../redux/contacts/items-actions';
+
+import { add, remove } from '../../redux/contacts/items-actions';
 import { nanoid } from 'nanoid';
 import { toast } from 'react-toastify';
 import Form from '../Form/Form';
@@ -12,9 +13,10 @@ import Filter from '../Filter/Filter';
 
 export default function ContactList() {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.item);
+  const contacts = useSelector(state => state.contacts.items);
   const value = useSelector(state => state.contacts.filter);
   console.log(contacts);
+  console.log(value);
   const addContacts = (name, number) => {
     const newName = checkName(name);
     const formNumber = numberFormatting(number);
@@ -27,7 +29,7 @@ export default function ContactList() {
     if (newName) {
       return toast.error(`${name} is already in contacts`);
     }
-    dispatch(addItem(contact));
+    dispatch(add(contact));
 
     toast.success(`${name} was added to contacts!`);
   };
@@ -47,7 +49,7 @@ export default function ContactList() {
   const visibleContacts = getVisibleContacts();
 
   const deleteContact = id => {
-    dispatch(deleteItem(id));
+    dispatch(remove(id));
   };
   const numberFormatting = number => {
     const array = [...number];
