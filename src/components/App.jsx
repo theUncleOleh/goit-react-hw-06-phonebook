@@ -1,12 +1,10 @@
-// import FormByFormik from './Formik';
 import { Routes, Route } from 'react-router-dom';
+
 import 'react-toastify/dist/ReactToastify.css';
 import Layout from './Layout/Layout';
 import PhoneBookPage from '../pages/PhoneBookPage';
 import SecondPage from '../pages/SecondPage';
 import NotFoundPage from '../pages/NotFoundPage';
-
-
 
 export default function App() {
   return (

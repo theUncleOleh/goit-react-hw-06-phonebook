@@ -4,7 +4,10 @@ import { Fragment } from 'react';
 import { ToastContainer } from 'react-toastify';
 import s from './ContactList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-
+import {
+  getContactsSelector,
+  getFilterSelector,
+} from '../../redux/contacts/items-selectors';
 import { add, remove } from '../../redux/contacts/items-actions';
 import { nanoid } from 'nanoid';
 import { toast } from 'react-toastify';
@@ -13,8 +16,8 @@ import Filter from '../Filter/Filter';
 
 export default function ContactList() {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.items);
-  const value = useSelector(state => state.contacts.filter);
+  const contacts = useSelector(getContactsSelector);
+  const value = useSelector(getFilterSelector);
   console.log(contacts);
   console.log(value);
   const addContacts = (name, number) => {
